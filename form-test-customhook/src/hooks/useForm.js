@@ -2,14 +2,14 @@ import React, { useState } from 'react'
 
 const initialValue = {
   name: "",
-  lastName: "",
+  email: "",
   password: ""
 }
 
 export const useForm = () => {
   const [inputValues, setInputValues] = useState(initialValue)
 
-  const onChange = ({ target }) => {
+  const onInputChange = ({ target }) => {
     const { value, name} = target
     setInputValues({
       ...inputValues,
@@ -22,9 +22,14 @@ export const useForm = () => {
     console.log(inputValues)
   }
 
+  const reset = () => {
+    setInputValues(initialValue)
+  }
+
   return {
     ...inputValues,
-    onChange,
-    onSubmit
+    onInputChange,
+    onSubmit,
+    reset
   }
 }

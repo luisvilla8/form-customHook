@@ -1,13 +1,13 @@
-import './App.css'
-import { Form } from './components/Form'
+import React from 'react'
+import { Form } from './components/Form/Form'
+import { ToggleTheme } from './components/Header/ToggleTheme'
 
-function App() {
-
+export const App = () => {
   return (
-    <div className="App">
+    <>
+      {/* <ToggleTheme label="xdd"/> */}
+      <img src="https://consigueventas.com/wp-content/uploads/2021/08/logo_CV.png" alt="consigue ventas" />
       <Form />
-    </div>
+    </>
   )
 }
-
-export default App
